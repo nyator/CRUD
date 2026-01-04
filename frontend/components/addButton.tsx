@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
-
-const AddButton = () => {
+interface AddButtonProps {
+  action: () => void;
+}
+const AddButton = ({ action }: AddButtonProps) => {
   return (
-    <TouchableOpacity style={styles.btn}>
+    <TouchableOpacity style={styles.btn} onPress={action}>
       <Image
         source={require("../assets/images/add.png")}
         style={{ width: 30, height: 30 }}
